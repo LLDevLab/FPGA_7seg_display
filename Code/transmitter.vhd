@@ -14,7 +14,7 @@ begin
 		variable dio_cnt_v: integer range 0 to max_int := 0;
 		variable data_v: std_logic_vector((max_int - 1) downto 0);		
 	begin		
-		-- Передача происходит по заднему фронту сигнала
+		-- Установка сигнала dio происходит по заднему фронту сигнала clk
 		if(falling_edge(clk) and (enable or not ready)) then
 			if(dio_cnt_v = 0) then
 				-- Прежде всего передаем данные, потом позицию на дисплее
